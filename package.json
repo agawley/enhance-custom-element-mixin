@@ -3,10 +3,15 @@
   "version": "1.3.1",
   "description": "Custom Element mixin that enables the reuse of single file components",
   "main": "index.mjs",
+  "types": "index.d.ts",
+  "tsd": {
+    "directory": "test/types"
+  },
   "scripts": {
-    "test": "run-s test:setup test:ci",
+    "test": "run-s test:setup test:ci test:types",
     "test:setup": "npx playwright install --with-deps",
     "test:ci": "web-test-runner \"test/*-test.html\" --node-resolve --playwright --browsers chromium firefox webkit",
+    "test:types": "tsd",
     "watch": "web-test-runner \"test/*-test.html\" --node-resolve --watch --playwright --browsers chromium firefox webkit"
   },
   "repository": {
